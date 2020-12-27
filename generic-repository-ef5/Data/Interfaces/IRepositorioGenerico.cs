@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace generic_repository_ef5.Data.Interfaces
 {
-    public interface IRepositorioGenerico<TEntity> where TEntity : class
+    public interface IRepositorioGenerico<TEntity> : IDisposable where TEntity : class
     {
-        void Adicionar(TEntity entity);
+        Task Adicionar(TEntity entity);
         void Atualizar(TEntity entity);
         Task<IEnumerable<TEntity>> ObterTodos();
         Task<IEnumerable<TEntity>> ObterTodos(Expression<Func<TEntity, bool>> predicate);

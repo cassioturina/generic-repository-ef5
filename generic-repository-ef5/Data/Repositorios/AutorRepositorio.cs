@@ -8,12 +8,9 @@ namespace generic_repository_ef5.Data.Repositorios
 {
     public class AutorRepositorio : RepositorioGenerico<Autor>, IAutorRepositorio
     {
-        private readonly AppDataContext appDataContext;
 
         public AutorRepositorio(AppDataContext appDataContext) : base(appDataContext)
-        {
-            this.appDataContext = appDataContext;
-        }
+        { }
 
         public async Task<IEnumerable<Autor>> ObterComLivros()
         {
